@@ -3,7 +3,7 @@ import { useMediaQuery } from '@mantine/hooks';
 import PropTypes from 'prop-types';
 import styles from '../Asset/styles/layout/layout.module.css'
 
-import NavbarMain from './../Layout/Navbar';
+import NavbarH from './../Layout/NavbarH';
 import Container from './Container';
 
 
@@ -13,21 +13,21 @@ const Layout = ({ children }) => {
 
 	return (
 		
-		<div className={media ? styles.mobile : styles.desktop} >
-		  	
-			<div className={styles.navbar}>
-							<NavbarMain/>
-			</div>
-			
+		
+			<div className={media ? styles.mobile : styles.desktop}>
 			<div className={styles['l-content-wrapper']}>
-				<div className={styles.content}>
-					<Container customStyle={{ flex: '1', justifyContent: 'flex-start', minHeight: '70vh' }}>
-						{children}
-					</Container>
-					<div style={{ marginBottom: '20px' }} />
-				</div>
-			</div>
-			</div>
+			   <div className={styles.navbar}>
+				   <NavbarH />
+			   </div>
+			   <div className={styles.content}>
+				   <Container customStyle={{ flex: '1', justifyContent: 'flex-start', minHeight: '70vh' }}>
+					   {children}
+				   </Container>
+				   <div style={{ marginBottom: '20px' }} />
+			   </div>
+			   
+		   </div>
+	   </div>
 			
 
 	);

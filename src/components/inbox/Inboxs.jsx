@@ -83,7 +83,7 @@ const Inboxs = (data )=> {
              Email - {activeData!==undefined && activeData?.email}
           </Text>
           <Text fz="s" c="black" weight={400}>
-          {activeData!==undefined && activeData?.message}
+              {activeData!==undefined && activeData?.message}
           </Text>
           <Text fz="xs" c="black"  weight={200}>
                {activeData!==null && (activeData?.createdAt).substr(0, 10)}
@@ -96,8 +96,8 @@ const Inboxs = (data )=> {
   });
 
   return (
-    <ScrollArea>
-      <Table sx={{ minWidth: 800 }} verticalSpacing="xs" striped='true'>
+    <ScrollArea >
+      <Table  sx={{ minWidth: 300 }} horizontalSpacing="md" verticalSpacing="xs" striped='true'>
         <thead>
           <tr>
             <th>Name of User</th>

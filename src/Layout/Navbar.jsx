@@ -16,7 +16,7 @@ import {
 import  Logo  from '../Asset/images/hubLogo.svg';
 
 import { useNavigate } from 'react-router-dom';
-import { Link, NavLink } from 'react-router-dom/dist';
+import { Link } from 'react-router-dom/dist';
 const useStyles = createStyles((theme) => ({
   link: {
     width: rem(50),
@@ -117,3 +117,6 @@ const NavbarMain = () =>{
 }
 
 export default NavbarMain
+
+
+

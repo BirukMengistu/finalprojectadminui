@@ -1,5 +1,5 @@
 .l-navbar {
-  
+  background-color: var(--g-color-secondary);
   width: 100%;
   z-index: 21
 }
@@ -17,13 +17,12 @@
 }
 
 .l-navbar-logo {
-  width: 1.2em;
+  width: 7em;
   height: auto;
   padding: 1em;
   overflow: hidden;
   filter: brightness(0) invert(1);
-  cursor: pointer;
-
+  cursor: pointer
 }
 
 .navbarlinks {

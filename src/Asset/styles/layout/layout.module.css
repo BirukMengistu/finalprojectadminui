@@ -1,7 +1,7 @@
 /* stylelint-disable declaration-no-important */
 .l-content-wrapper {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   width: 100%;
   min-height: 100%;
@@ -18,7 +18,7 @@
 
 .mobile {
   width: 100%;
-  background-color: rgb(213, 218, 218);
+  background-color: rgb(255, 255, 255)55, 255, 255);
   overflow-y: scroll;
   height: 100vh
 }
@@ -30,7 +30,7 @@
 }
 
 .content {
-  height: 100vh;
+  height: 60vh;
   flex: 1;
   overflow-y: scroll
 }
@@ -38,13 +38,13 @@
 .desktop {
   display: flex;
   justify-content: center;
-  background-color: rgb(213, 218, 218);
+  background-color: white;
   overflow-y: hidden;
   height: 100vh;
 }
 
 .navbar {
-  position:sticky;
+  position: sticky;
   top: 0;
   z-index: 21;
 }

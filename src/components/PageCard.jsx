@@ -1,5 +1,5 @@
 import { createStyles, Paper, Text, ThemeIcon, rem } from '@mantine/core';
-import { IconColorSwatch } from '@tabler/icons-react';
+import { IconInbox , IconUser ,IconArticle } from '@tabler/icons-react';
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -11,7 +11,7 @@ const useStyles = createStyles((theme) => ({
     paddingLeft: `calc(${theme.spacing.xl} * 2)`,
 
     '&:hover': {
-      boxShadow: theme.shadows.md,
+      boxShadow: theme.shadows.md, 
       transform: 'scale(1.02)',
     },
 
@@ -29,19 +29,22 @@ const useStyles = createStyles((theme) => ({
 
 
 
-const PageCard =({ title, description })=> {
+const PageCard =({ title, description ,icon })=> {
   const { classes } = useStyles();
   return (
     <Paper withBorder radius="md" mt="md" className={classes.card}>
+      
       <ThemeIcon
         size="xl"
         radius="md"
         variant="gradient"
         gradient={{ deg: 0, from: 'pink', to: 'orange' }}
       >
-        <IconColorSwatch size={rem(28)} stroke={1.5} />
+        {icon ==='blog' && <IconArticle  size={rem(28)} stroke={1.5} />}
+        {icon ==='inbox' && <IconInbox size={rem(28)} stroke={1.5} />}
+        {icon ==='user' && <IconUser size={rem(28)} stroke={1.5} />}
       </ThemeIcon>
-      <Text size="xl" weight={500} mt="md">
+       <Text size="sm" weight={500} mt="md">
         {title}
       </Text>
       <Text size="sm" mt="sm" color="dimmed">

@@ -95,7 +95,7 @@ const BlogReview = (data )=> {
 
   return (
     <ScrollArea>
-      <Table sx={{ minWidth: 800 }} verticalSpacing="xs" striped='true'>
+      <Table sx={{ minWidth: 300 }} horizontalSpacing="md" verticalSpacing="xs" striped='true'>
         <thead>
           <tr>
             <th>Title</th>

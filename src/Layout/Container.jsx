@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+
 import styles from '../Asset/styles/layout/container.module.css'
 
 const Container = ({ children, customStyle }) => {
