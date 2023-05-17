@@ -48,7 +48,7 @@ const BlogReview = (data )=> {
             {row.tittle}
           </Anchor>
         </td>
-        <td>{(row.createdAt)}</td>
+        <td>{(row.createdAt).substring(0, 10)}</td>
         <td>
           <Anchor component="button" fz="sm">
             {row.authour}
@@ -76,16 +76,12 @@ const BlogReview = (data )=> {
               <Button fz="xs" variant="outline" weight={700} onClick={()=> handleApproved(row , false) }>
                 Unpublished
              </Button> :
-            <Button fz="xs" variant="outline" weight={700} onClick={()=> handleApproved(row , true) }>
+            <Button fz="xs"  weight={700} onClick={()=> handleApproved(row , true) }>
               Published
              </Button>
             
             }
             
-
-            <Button fz="xs" variant="outline" weight={700}>
-              Delete
-            </Button>
           </Group>
           
         </td>

@@ -16,6 +16,7 @@ import {
 import  Logo  from '../Asset/images/hubLogo.svg';
 
 import { useNavigate } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom/dist';
 const useStyles = createStyles((theme) => ({
   link: {
     width: rem(50),
@@ -44,12 +45,15 @@ const useStyles = createStyles((theme) => ({
 
 
 
-function NavbarLink({ icon: Icon, label, active, onClick ,Image}) {
+function NavbarLink({ icon: Icon, label, active, onClick,to ,Image}) {
   const { classes, cx } = useStyles();
   return (
     <Tooltip label={label} position="right" transitionProps={{ duration: 0 }}>
       <UnstyledButton onClick={onClick} className={cx(classes.link, { [classes.active]: active })}>
-        <Icon size="2rem" stroke={1.5} />
+        <Link className={cx(classes.link, { [classes.active]: active })} to={to}>
+           <Icon size="2rem" stroke={1.5}  />
+        </Link>
+        
       </UnstyledButton>
     </Tooltip>
   );
@@ -72,6 +76,7 @@ const NavbarMain = () =>{
       {...link}
       key={link.label}
       active={index === active}
+      to ={link.path}
       onClick={() => setActive(index)}
     />
   ));

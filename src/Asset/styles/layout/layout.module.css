@@ -30,7 +30,7 @@
 }
 
 .content {
-  height: 60vh;
+  height: 100vh;
   flex: 1;
   overflow-y: scroll
 }
