@@ -1,0 +1,28 @@
+.l-footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9em;
+  margin: 0.5em
+}
+
+.l-footer-copyright-social ul {
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.l-footer-copyright-social li a {
+  color: var(--g-color-secondary)
+}
+
+.l-footer-copyright-social li:nth-last-child(1) {
+  margin-right: 0
+}
+
+.l-footer-copyright-divider {
+  width: 20%;
+  height: 1px;
+  background: #150c0c
+}

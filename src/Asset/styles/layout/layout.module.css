@@ -1,0 +1,62 @@
+/* stylelint-disable declaration-no-important */
+.l-content-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 100%;
+  flex: auto;
+  top: 0;
+  position: relative;
+  z-index: 21;
+}
+
+.l-page-img {
+  width: 20rem;
+  padding: 0.5rem
+}
+
+.mobile {
+  width: 100%;
+  background-color: rgb(213, 218, 218);
+  overflow-y: scroll;
+  height: 100vh
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    overflow-y: hidden !important
+  }
+}
+
+.content {
+  height: 60vh;
+  flex: 1;
+  overflow-y: scroll
+}
+
+.desktop {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(213, 218, 218);
+  overflow-y: hidden;
+  height: 100vh;
+}
+
+.navbar {
+  position:sticky;
+  top: 0;
+  z-index: 21;
+}
+
+/* height: 100%; */
+
+/* box-shadow: var(--g-box-shadow); */
+
+/* border-radius: 1em; */
+
+/* max-height: 90vh; */
+
+/* margin: 4em auto; */
+
+/* width: 80%; */

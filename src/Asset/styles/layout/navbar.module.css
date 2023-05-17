@@ -1,0 +1,31 @@
+.l-navbar {
+  
+  width: 100%;
+  z-index: 21
+}
+
+.wrapper {
+  padding: 2em
+}
+
+.navbar {
+  display: flex;
+  width: 75%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between
+}
+
+.l-navbar-logo {
+  width: 1.2em;
+  height: auto;
+  padding: 1em;
+  overflow: hidden;
+  filter: brightness(0) invert(1);
+  cursor: pointer;
+
+}
+
+.navbarlinks {
+  display: flex
+}
