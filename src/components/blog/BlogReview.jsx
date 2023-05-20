@@ -2,6 +2,7 @@ import { createStyles,Modal,Select, Table,Button, Anchor, Text, Group, ScrollAre
 import { useDisclosure } from '@mantine/hooks';
 import { useState } from 'react';
 import useBlog from '../../hooks/useBlog'
+import{Notifications} from '@mantine/notifications'
 const useStyles = createStyles((theme) => ({
   progressBar: {
     '&:not(:first-of-type)': {
@@ -23,18 +24,64 @@ const BlogReview = (data )=> {
 
   console.log(data)
   
-  const handleApproved =(tempData, boolData)=> {
+  const handleApproved = async (tempData, boolData)=> {
     
     const newData ={
         ...tempData,review:boolData
     }
-    const updateResposne = updateBlog(newData,tempData._id)
-    
+    const updateResposne = await updateBlog(newData,tempData._id)
+    console.log(updateResposne)
+    if(updateResposne?.status === 200 && boolData)
+    {
+      Notifications.show({
+       title:'Succesfull',
+       message:'blog Succesfull Published',
+       autoClose: true
+      })
+
+      setTimeout(()=>{
+        return window.location.replace('/blog')
+      },1500)
+    }
+
+    if(updateResposne?.status === 200 && boolData === true)
+    {
+      Notifications.show({
+       title:'Succesfull',
+       message:'blog Succesfull Published',
+       autoClose: true
+      })
+
+      setTimeout(()=>{
+        return window.location.replace('/blogs')
+      },1500)
+    }
+    if(updateResposne?.status === 200 && boolData===false)
+    {
+      Notifications.show({
+       title:'Succesfull',
+       message:'blog Succesfull UnPublished',
+       autoClose: true
+      })
+
+      setTimeout(()=>{
+        return window.location.replace('/blogs')
+      },1500)
+    }
+    if(updateResposne.status!==200){
+      Notifications.show({
+        title:'Unsuccesfull',
+        message:'Blog failed to Published',
+        autoClose: true,
+        color: 'red',
+       })
+      
+    }
    
   }
 
 
-  const rows = data?.blog?.map((row) => {
+  const rows = data?.blog?.map((row ,index) => {
    
   const BlogReviews = (row.review)? 'Published':'UnPublished';
 
@@ -42,14 +89,14 @@ const BlogReview = (data )=> {
     return (
       <>
        
-       <tr key={row.tittle}>
-        <td>
+       <tr key={index}>
+        <td key={row.title}>
           <Anchor component="button" fz="sm">
             {row.tittle}
           </Anchor>
-        </td>
-        <td>{(row.createdAt).substring(0, 10)}</td>
-        <td>
+        </td >
+        <td key={row.createStyles}>{(row.createdAt).substring(0, 10)}</td>
+        <td key={row.authour}>
           <Anchor component="button" fz="sm">
             {row.authour}
           </Anchor>

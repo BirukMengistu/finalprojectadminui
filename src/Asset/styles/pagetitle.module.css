@@ -1,0 +1,16 @@
+.c-page-header {
+  text-align: center;
+  border-bottom: 1px solid black;
+  margin: 0  auto;
+  padding: 0.123rem;
+  font-size: 1.5rem;
+  max-width: 15rem;
+  word-break: break-word
+}
+
+.c-page {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 1em 0
+}

@@ -19,6 +19,9 @@ const Routes = {
 	getsupport: () => {
 		return `/support/`;
 	},
+	getUser: () => {
+		return `/users/user`;
+	},
 	addProfile: () => {
 		return `/profile/`;
 	},

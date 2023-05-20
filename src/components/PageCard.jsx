@@ -22,7 +22,7 @@ const useStyles = createStyles((theme) => ({
       bottom: 0,
       left: 0,
       width: rem(6),
-      backgroundImage: theme.fn.linearGradient(0, theme.colors.pink[6], theme.colors.orange[6]),
+      backgroundImage: theme.fn.linearGradient(0, theme.colors.brand[1], theme.colors.brand[7]),
     },
   },
 }));

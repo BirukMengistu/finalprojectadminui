@@ -37,16 +37,17 @@ const HamburgerMenu = () => {
 					HOME
 				</Menu.Item>
 				{isAuth &&
+				
 				<Menu.Item component={Link} to='/blogs'>
 					Blog
 				</Menu.Item>}
-				
+				{isAuth &&
 				<Menu.Item component={Link} to='/message'>
 					Inbox
-				</Menu.Item>
-				<Menu.Item component={Link} to='/userAcount'>
+				</Menu.Item>}
+				{isAuth && <Menu.Item component={Link} to='/userAccount'>
 					User
-				</Menu.Item>
+				</Menu.Item>}
 				
     
 		{isAuth &&
