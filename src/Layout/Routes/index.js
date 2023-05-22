@@ -5,7 +5,7 @@ import React,{Suspense} from 'react';
 import Blogs from '../../Pages/Blogs';
 import Inbox from '../../Pages/Inbox';
 import { Auth } from '../../hooks/utils';
-import UserInfo from '../../components/user/UserInfo';
+
 import Users from '../../Pages/Users';
 
 const Home = React.lazy(() => import("../../Pages/Home"));

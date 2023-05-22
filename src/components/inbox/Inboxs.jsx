@@ -1,7 +1,7 @@
 import { createStyles,Modal,TextInput, Table,Button, Anchor, Text, Group, ScrollArea, rem } from '@mantine/core';
 import { useDisclosure, useMediaQuery } from '@mantine/hooks';
 import { useState } from 'react';
-
+import { IconSearch } from '@tabler/icons-react';
 const useStyles = createStyles((theme) => ({
   progressBar: {
     '&:not(:first-of-type)': {
@@ -20,10 +20,18 @@ const Inboxs = (data )=> {
   const [opened, setOpen] = useState(false);
   const [newReview , SetReview] = useState(false)
   const [id , setId]= useState('')
+  const [search , setSearch] =useState('')
   const [slowTransitionOpened, setSlowTransitionOpened] = useState(false);
-  console.log(data)
+  
   const [activeData, setActive] = useState(null)
- 
+
+
+
+  const filterData =data?.SupportMessage?.sort((a, b) => {
+    if (a.createdAt > b.createdAt) {
+      return -1;
+    }
+  });
 
 
   const rows = data?.SupportMessage?.map((row) => {
@@ -46,7 +54,7 @@ const Inboxs = (data )=> {
             {row.name}
           </Anchor>
         </td>
-        <td>{(row.createdAt)}</td>
+        <td>{(row.createdAt)?.substring(0, 10)}</td>
       
        
         <td>
@@ -86,7 +94,7 @@ const Inboxs = (data )=> {
               {activeData!==undefined && activeData?.message}
           </Text>
           <Text fz="xs" c="black"  weight={200}>
-               {activeData!==null && (activeData?.createdAt).substr(0, 10)}
+               {activeData!==null && (activeData?.createdAt).substring(0, 10)}
           </Text>
     </Modal>
       
@@ -97,6 +105,7 @@ const Inboxs = (data )=> {
 
   return (
     <ScrollArea >
+      
       <Table  sx={{ minWidth: 300 }} horizontalSpacing="md" verticalSpacing="xs" striped='true'>
         <thead>
           <tr>
